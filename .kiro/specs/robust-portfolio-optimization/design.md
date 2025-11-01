@@ -168,6 +168,7 @@ class RobustOptimizer:
 ```python
 class BacktestEngine:
     def run_backtest(self, start_date: str, end_date: str, rebalance_freq: str) -> BacktestResult
+    def run_train_test_backtest(self, train_end_date: str = "2023-12-31", initial_capital: float = 1000000.0) -> TrainTestResult
     def calculate_performance_metrics(self, returns: pd.Series) -> Dict[str, float]
     def compare_strategies(self, strategy_returns: Dict[str, pd.Series]) -> pd.DataFrame
     def account_for_transaction_costs(self, weights: pd.DataFrame, cost_bps: float) -> pd.Series
@@ -176,6 +177,7 @@ class BacktestEngine:
 **Backtesting Framework**:
 - **Rolling Windows**: 252-day estimation windows with monthly rebalancing
 - **Out-of-Sample**: Strict temporal separation between estimation and testing
+- **Train/Test Split**: Use data through 2023 for training, 2024-current for testing with $1M simulated capital
 - **Transaction Costs**: Proportional costs based on portfolio turnover
 - **Benchmarks**: Equal-weight, Markowitz mean-variance, and market cap-weighted
 
@@ -226,6 +228,17 @@ class BacktestResult:
     performance_metrics: Dict[str, float]
     benchmark_comparison: pd.DataFrame
     regime_attribution: pd.DataFrame
+
+@dataclass
+class TrainTestResult:
+    train_period_end: pd.Timestamp
+    test_period_start: pd.Timestamp
+    initial_capital: float
+    final_portfolio_value: float
+    monthly_portfolio_values: pd.Series
+    test_period_returns: pd.Series
+    regime_allocations: pd.DataFrame
+    performance_summary: Dict[str, float]
 ```
 
 ### Database Schema

@@ -1,0 +1,14 @@
+=== Portfolio Optimization Summary Report ===
+
+Backtest Summary:
+Number of strategies tested: 1
+
+Strategy Performance:
+Best Return: robust_optimization (22.09%)
+Best Sharpe: robust_optimization (1.864)
+
+Detailed Performance Metrics:
+--------------------------------------------------------------------------------
+Strategy             Return     Vol        Sharpe     MaxDD     
+--------------------------------------------------------------------------------
+robust_optimization  22.09%     11.85%     1.864      -13.16%   

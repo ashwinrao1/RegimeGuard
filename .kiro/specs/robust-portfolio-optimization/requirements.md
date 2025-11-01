@@ -79,6 +79,18 @@ A quantitative portfolio optimization system that detects market regimes (bull/b
 
 ### Requirement 6
 
+**User Story:** As a quantitative researcher, I want to test portfolio strategies using a train/test split methodology with $1 million simulated capital, so that I can evaluate real-world performance on completely unseen data.
+
+#### Acceptance Criteria
+
+1. THE Backtest_Engine SHALL use all available data through December 31, 2023 as the training dataset for regime detection and parameter estimation
+2. THE Backtest_Engine SHALL use data from January 1, 2024 to current date as the testing dataset for out-of-sample performance evaluation
+3. THE Portfolio_Optimization_System SHALL simulate investing $1,000,000 according to the optimized allocation recommendations during the testing period
+4. THE Backtest_Engine SHALL calculate the final portfolio value and track monthly performance throughout the testing period
+5. THE Visualization_Engine SHALL generate performance tracking charts showing portfolio value evolution and regime-based allocation decisions during the test period
+
+### Requirement 7
+
 **User Story:** As a portfolio manager, I want comprehensive visualization and reporting capabilities, so that I can communicate results and insights to stakeholders effectively.
 
 #### Acceptance Criteria

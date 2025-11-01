@@ -1,0 +1,27 @@
+ROBUST PORTFOLIO OPTIMIZATION REPORT
+========================================
+Generated: 2025-11-01 17:31:52
+Data Source: Real market data via Yahoo Finance & FRED
+Analysis Period: 2020-11-02 to 2025-11-01
+
+PORTFOLIO ALLOCATION:
+--------------------
+SPY:  24.9%
+AGG:  21.8%
+GLD:  16.1%
+XLE:  12.7%
+XLF:  14.1%
+XLK:  10.3%
+
+RISK METRICS:
+---------------
+Worst-case Annual Volatility: 7.9%
+Total Allocation: 100.0%
+Largest Position: 24.9%
+Number of Positions: 6
+
+MARKET REGIME ANALYSIS:
+-------------------------
+Regime 0: 10 days (25.6%)
+Regime 1: 10 days (25.6%)
+Regime 2: 19 days (48.7%)

@@ -44,6 +44,19 @@ class BacktestResult:
     regime_attribution: pd.DataFrame
 
 
+@dataclass
+class TrainTestResult:
+    """Data structure for train/test split backtesting results."""
+    train_period_end: pd.Timestamp
+    test_period_start: pd.Timestamp
+    initial_capital: float
+    final_portfolio_value: float
+    monthly_portfolio_values: pd.Series
+    test_period_returns: pd.Series
+    regime_allocations: pd.DataFrame
+    performance_summary: Dict[str, float]
+
+
 class DataManagerInterface(ABC):
     """Interface for data acquisition and preprocessing."""
     
@@ -151,6 +164,11 @@ class BacktestEngineInterface(ABC):
     @abstractmethod
     def run_backtest(self, start_date: str, end_date: str, rebalance_freq: str) -> BacktestResult:
         """Run backtesting simulation."""
+        pass
+    
+    @abstractmethod
+    def run_train_test_backtest(self, train_end_date: str = "2023-12-31", initial_capital: float = 1000000.0) -> 'TrainTestResult':
+        """Run train/test split backtesting with simulated capital."""
         pass
     
     @abstractmethod

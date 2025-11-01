@@ -1,0 +1,28 @@
+ADVANCED REAL DATA BACKTEST REPORT
+========================================
+Generated: 2025-11-01 17:38:54
+Data Source: Real market data (Yahoo Finance & FRED)
+Training Period: 2019-11-05 to 2024-05-03
+Testing Period: 2024-05-06 to 2025-10-31
+
+OUT-OF-SAMPLE PERFORMANCE:
+-------------------------
+Total Return: 29.66%
+Annualized Return: 19.12%
+Annualized Volatility: 9.58%
+Sharpe Ratio: 1.997
+Maximum Drawdown: -7.87%
+
+BENCHMARK COMPARISON:
+--------------------
+Strategy Return: 19.12%
+Equal Weight Return: 19.11%
+Excess Return: 0.01%
+
+Strategy Sharpe: 1.997
+Equal Weight Sharpe: 1.492
+Sharpe Improvement: 0.505
+
+SPY Return: 21.01%
+SPY Sharpe: 1.198
+Alpha vs SPY: -1.88%
