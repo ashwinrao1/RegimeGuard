@@ -1,0 +1,58 @@
+# Robust Portfolio Optimization System Configuration
+
+# Data Management Configuration
+data:
+  default_tickers:
+    - "SPY"    # S&P 500 ETF
+    - "AGG"    # Aggregate Bond ETF
+    - "GLD"    # Gold ETF
+    - "XLE"    # Energy Sector ETF
+    - "XLF"    # Financial Sector ETF
+    - "XLK"    # Technology Sector ETF
+  
+  macro_series:
+    - "VIXCLS"   # VIX Volatility Index
+    - "DGS10"    # 10-Year Treasury Rate
+    - "DGS2"     # 2-Year Treasury Rate
+    - "UNRATE"   # Unemployment Rate
+  
+  start_date: "2010-01-01"
+  lookback_years: 10
+  data_cache_dir: "data/cache"
+  api_timeout: 30
+  max_retries: 3
+
+# Regime Detection Configuration
+regime:
+  n_regimes: 3
+  clustering_method: "kmeans"  # Options: kmeans, hmm
+  feature_window: 20
+  min_regime_length: 5
+  validation_method: "silhouette"
+
+# Portfolio Optimization Configuration
+optimization:
+  optimization_method: "worst_case"  # Options: worst_case, cvar
+  max_weight: 0.4
+  min_weight: 0.0
+  transaction_cost_bps: 5.0
+  rebalance_frequency: "monthly"  # Options: daily, weekly, monthly
+  solver_timeout: 60
+
+# Backtesting Configuration
+backtest:
+  estimation_window: 252  # Trading days (1 year)
+  min_history: 504       # Minimum history required (2 years)
+  benchmark_tickers:
+    - "SPY"
+    - "AGG"
+  performance_metrics:
+    - "return"
+    - "volatility"
+    - "sharpe"
+    - "max_drawdown"
+
+# System Configuration
+log_level: "INFO"
+random_seed: 42
+n_jobs: -1  # Use all available cores
